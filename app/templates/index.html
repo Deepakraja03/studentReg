@@ -17,18 +17,18 @@
                   class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
                   alt="Sample photo">
                 <div class="card-body p-4 p-md-5">
-                  <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+                  <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Student Registration Info</h3>
       
-                  <form class="px-md-2">
-      
+                  <form action = "." class="px-md-2" method = "post">
+                    {% csrf_token %}
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form3Example1q">Name</label>
-                      <input type="text" id="form3Example1q" class="form-control" />
+                      <input name = "name" type="text" id="form3Example1q" class="form-control" required />
                     </div>
 
                     <div class="form-outline mb-4">
-                      <label class="form-label" for="email1">Student email:</label>
-                      <input type="email" id="email1" class="form-control" />
+                      <label class="form-label" for="email1">Student email</label>
+                      <input name = "email" type="email" id="email1" class="form-control" required />
                     </div>
       
                     <div class="row">
@@ -36,13 +36,13 @@
       
                         <div class="form-outline datepicker">
                           <label for="exampleDatepicker1" class="form-label">Date of Birth</label>
-                          <input type="date" class="form-control" id="exampleDatepicker1" />
+                          <input name = "dob" type="date" class="form-control" id="exampleDatepicker1" required />
                         </div>
       
                       </div>
                       <div class="col-md-6 mb-4">
                         <label class="form-label" for="form3Example1q">Gender</label>
-                        <select name = "gender" class="select">
+                        <select name = "gender" class="select" required >
                           <option value="1" disabled>Gender</option>
                           <option value="Female">Female</option>
                           <option value="Male">Male</option>
@@ -54,7 +54,7 @@
       
                     <div class="mb-4">
                       <label class="form-label" for="form3Example1q">CLASS</label>
-                      <select name = "class" class="select">
+                      <select name = "className" class="select" required>
                         <option value="1" disabled>Class</option>
                         <option value="Class 1">Class 1</option>
                         <option value="Class 2">Class 2</option>
@@ -70,12 +70,12 @@
       
                         <div class="form-outline">
                           <label class="form-label" for="form3Example1w">Registration code</label>
-                          <input type="text" id="form3Example1w" class="form-control" />
+                          <input name = "reg" type="text" id="form3Example1w" class="form-control" required />
                         </div>
 
-                        <div class="form-outline">
-                          <label class="form-label" for="test">Addmission Test Score:</label>
-                          <input type="text" id="test" class="form-control" />
+                        <div class="form-outline pt-3 my-2">
+                          <label class="form-label" for="test">Addmission Test Score</label>
+                          <input name = "test" type="number" id="test" class="form-control" required />
                         </div>
       
                       </div>
