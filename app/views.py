@@ -16,10 +16,14 @@ def index(request):
         obj.name = name
         obj.email = email
         obj.dob = dob
-        obj.gen = gen
+        obj.gender = gen
         obj.Stuclass = cla
         obj.reg = regn
         obj.test = test
         obj.save()
         return HttpResponse("<h1>Your entry have been saved</h1>")
     return render(request, 'index.html')
+
+def list_stu(request):
+    obj = Student.objects.all()
+    return render(request, 'list.html', {'obj':obj})
